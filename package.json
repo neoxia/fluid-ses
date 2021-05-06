@@ -1,0 +1,9 @@
+{
+  "name": "fluid-ses",
+  "version": "0.0.1",
+  "description": "A syntax fluid mail sender library that uses SES",
+  "main": "index.js",
+  "repository": "git@github.com:neoxia/fluid-ses.git",
+  "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
+  "license": "MIT"
+}
