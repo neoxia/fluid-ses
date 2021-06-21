@@ -3,19 +3,18 @@ import {createTransport, SentMessageInfo, Transporter} from 'nodemailer';
 import {CustomAttachment, IFluidSESConstructorOptions, IFluidSESMailOptions} from './types';
 import {CustomTemplatingOptions, ITemplateEngine, TemplateEngine} from '@fluid-ses/templating';
 import {MailerError, MissingOptionsError, TemplateEngineError} from './core-errors';
-import Mail from 'nodemailer/lib/mailer';
-
+import Mail, {Address} from 'nodemailer/lib/mailer';
 
 export class FluidSes {
     private _options: IFluidSESMailOptions = {};
 
-    private readonly _defaultSourceMail: string | undefined = '';
-    private readonly _defaultSourceName: string | undefined = '';
-    private readonly _mailTrap: (addressees: string[]) => Promise<string[]>;
+    private readonly _defaultSourceMail: string | undefined;
+    private readonly _defaultSourceName: string | undefined;
+    private readonly _mailTrap: (addressees: Array<string | Address>) => Promise<Array<string | Address>>;
     private readonly _templateEngine: ITemplateEngine;
     private readonly _transporter: Transporter;
 
-    private static async _noTrap(addressees: string[]): Promise<string[]> {
+    private static async _noTrap(addressees: Array<string | Address>): Promise<Array<string | Address>> {
       return addressees;
     }
 
@@ -104,6 +103,16 @@ export class FluidSes {
     }
 
     /**
+     * Define additionalOptions option
+     * @param additionalOptions (boolean)
+     * @returns {this}
+     */
+    public additionalOptions(additionalOptions: Mail.Options): FluidSes {
+      this._options.additionalOptions = additionalOptions;
+      return this;
+    }
+
+    /**
      * Send mail based on options, reset options afterward
      * @returns Nothing or error
      */
@@ -134,33 +143,33 @@ export class FluidSes {
     }
 
     private async _sendMail(): Promise<SentMessageInfo> {
-      if (!this._options.addressees || !this._options.subject) {
+      if ((!this._options.addressees && !this._options.additionalOptions?.to)|| !this._options.subject) {
         throw new MissingOptionsError('Addressees and Subject must be defined');
       }
 
-      const finalAddressees = await this._mailTrap(this._options.addressees);
+      const addresseesToUse =
+          this._options.addressees ||
+            Array.isArray(this._options.additionalOptions?.to) ?
+            this._options.additionalOptions?.to :
+            [this._options.additionalOptions?.to];
+
+      const finalAddressees = await this._mailTrap(addresseesToUse);
 
       if (finalAddressees.length) {
         const filledTemplate = await this._computedTemplate();
         const completeSource = this._getCompleteSource();
-        let mailSendingOptions: Mail.Options;
+        const mailSendingOptions: Mail.Options = {
+          ...this._options.additionalOptions,
+          from: this._options.additionalOptions?.from || completeSource,
+          subject: this._options.additionalOptions?.subject || this._options.subject,
+          text: this._options.additionalOptions?.text || filledTemplate,
+          attachments: this._options.additionalOptions?.attachments || this._options.attachments,
+        };
         if (this._options.useBbc && finalAddressees.length > 1) {
-          mailSendingOptions = {
-            from: completeSource,
-            to: finalAddressees[0],
-            bcc: finalAddressees.slice(1),
-            subject: this._options.subject,
-            text: filledTemplate,
-            attachments: this._options.attachments,
-          }
+          mailSendingOptions.to = this._options.additionalOptions?.to || finalAddressees[0];
+          mailSendingOptions.bcc = this._options.additionalOptions?.bcc || finalAddressees.slice(1);
         } else {
-          mailSendingOptions = {
-            from: completeSource,
-            to: finalAddressees,
-            subject: this._options.subject,
-            text: filledTemplate,
-            attachments: this._options.attachments,
-          }
+          mailSendingOptions.to = this._options.additionalOptions?.to || finalAddressees;
         }
         try {
           return this._transporter.sendMail(mailSendingOptions);
