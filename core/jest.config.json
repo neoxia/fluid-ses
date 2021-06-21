@@ -1,0 +1,20 @@
+{
+  "testEnvironment": "node",
+  "roots": ["<rootDir>/test"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "maxConcurrency": 5,
+  "testRegex": ".+\\.(test|spec)\\.tsx?$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "moduleNameMapper": {
+    "@/(.*)": "<rootDir>/src/$1"
+  },
+  "displayName": {
+    "name": "Fluid SES Core - Unit tests",
+    "color": "white"
+  },
+  "collectCoverage": true,
+  "coverageDirectory": "./coverage",
+  "collectCoverageFrom": ["src/**/*.ts"]
+}

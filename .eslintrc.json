@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "rules": {
+        "quotes": ["error", "single", { "avoidEscape":  true }],
+        "indent": ["error", 2],
+        "no-multiple-empty-lines": "error",
+        "no-lonely-if": "error",
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+        "no-console": "error"
+    }
+}

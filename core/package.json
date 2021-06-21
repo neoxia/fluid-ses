@@ -1,0 +1,28 @@
+{
+  "name": "@fluid-ses/core",
+  "version": "0.0.1",
+  "description": "Fluid SES core",
+  "private": true,
+  "main": "lib/src/index.js",
+  "typings": "lib/src/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "npx jest --verbose --colors --config jest.config.json",
+    "build": "npx tsc"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.14.0",
+    "@fluid-ses/templating": "workspace:*",
+    "nodemailer": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.1",
+    "@types/sinon": "^10.0.2",
+    "sinon": "^10.0.1"
+  }
+}

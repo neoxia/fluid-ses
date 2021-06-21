@@ -1,1 +1,14 @@
 .idea
+core/lib
+core/node_modules
+core/coverage
+templating/lib
+templating/node_modules
+templating/coverage
+node_modules
+coverage
+yarn-error.log
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
