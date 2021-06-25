@@ -22,6 +22,14 @@ describe('Fluid ses core tests', () => {
   const singleAddressee = 'other@mail.com';
   const singleAttachment: Attachment = { filename: 'something' };
 
+  const additionalOptions: Mail.Options = {
+    encoding: 'utf-8',
+  };
+  const additionalOptionsWithTo: Mail.Options = {
+    encoding: 'utf-8',
+    to: 'someone@mail.com',
+  };
+
   let mailerStub: SinonStub<[Mail.Options]>;
   let templateEngineStub: SinonStub<[CustomTemplatingOptions], Promise<string>>;
 
@@ -272,6 +280,85 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
     expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual([singleAttachment]);
+    expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
+  });
+
+  it('Should call with additionalOptions', async () => {
+    const fluidSes = new FluidSes({region});
+    await fluidSes.sourceName(sourceName)
+      .sourceMail(sourceMail)
+      .addressees(addressees)
+      .subject(subject)
+      .template(templatingOptions)
+      .additionalOptions(additionalOptions)
+      .sendMail();
+
+    expect(mailerStub.callCount).toEqual(1);
+    expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
+    expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
+    expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
+    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
+    expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
+    expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
+  });
+
+  it('Should not throw error if addressee is given through additionalOptions instead of fluid-ses way and should use it', async () => {
+    const fluidSes = new FluidSes({region});
+    await fluidSes.sourceName(sourceName)
+      .sourceMail(sourceMail)
+      .subject(subject)
+      .template(templatingOptions)
+      .additionalOptions(additionalOptionsWithTo)
+      .sendMail();
+
+    expect(mailerStub.callCount).toEqual(1);
+    expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
+    expect(mailerStub.firstCall.firstArg.to).toEqual([additionalOptionsWithTo.to]);
+    expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
+    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
+    expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
+    expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
+  });
+
+  it('Should use fluid-ses options instead of additionalOptions if override is set to false', async () => {
+    const fluidSes = new FluidSes({region});
+    await fluidSes.sourceName(sourceName)
+      .sourceMail(sourceMail)
+      .addressees(addressees)
+      .subject(subject)
+      .template(templatingOptions)
+      .additionalOptions(additionalOptionsWithTo, false)
+      .sendMail();
+
+    expect(mailerStub.callCount).toEqual(1);
+    expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
+    expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
+    expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
+    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
+    expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
+    expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
+  });
+
+  it('Should use additionalOptions instead of fluid-ses if override is set to false', async () => {
+    const fluidSes = new FluidSes({region});
+    await fluidSes.sourceName(sourceName)
+      .sourceMail(sourceMail)
+      .addressees(addressees)
+      .subject(subject)
+      .template(templatingOptions)
+      .additionalOptions(additionalOptionsWithTo, true)
+      .sendMail();
+
+    expect(mailerStub.callCount).toEqual(1);
+    expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
+    expect(mailerStub.firstCall.firstArg.to).toEqual([additionalOptionsWithTo.to]);
+    expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
+    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
+    expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
 });
