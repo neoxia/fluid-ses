@@ -14,6 +14,7 @@ export interface IFluidSESConstructorOptions {
 }
 
 export interface IFluidSESMailOptions {
+    additionalOptionsOverriding?: boolean;
     subject?: string;
     templatingOptions?: CustomTemplatingOptions;
     addressees?: Array<string | Address>;
