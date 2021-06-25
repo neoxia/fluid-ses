@@ -122,4 +122,9 @@ describe('Testing default templating function', () => {
     const filledTemplate = await templateEngine.getComputedTemplate({template: templateWithMultipleLinesAndOneVariable, templateMapping: templateMappingWithOneVariable});
     expect(filledTemplate).toEqual(filledTemplateWithMultipleLinesAndOneVariable);
   });
+
+  it('Should return plain template', async () => {
+    const template = await templateEngine.getComputedTemplate(templateWithNoVariable);
+    expect(template).toEqual(templateWithNoVariable);
+  });
 });
