@@ -7,6 +7,12 @@ Following environment variables must be defined:
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 
+## Installation
+
+```bash
+yarn && yarn run build:all
+```
+
 ## Initializing Fluid-SES
 
 ```typescript
