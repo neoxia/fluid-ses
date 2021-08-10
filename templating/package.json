@@ -2,7 +2,9 @@
   "name": "@fluid-ses/templating",
   "version": "0.0.1",
   "description": "Templating engine and utils used by Fluid SES",
-  "private": true,
+  "repository": "https://github.com/neoxia/fluid-ses",
+  "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
+  "license": "MIT",
   "main": "lib/src/index.js",
   "typings": "lib/src/index.d.ts",
   "directories": {

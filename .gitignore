@@ -12,3 +12,5 @@ yarn-error.log
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
+
+.DS_Store
