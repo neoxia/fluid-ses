@@ -1,5 +1,5 @@
 import Mail, {Address, Attachment} from 'nodemailer/lib/mailer';
-import {CustomTemplatingOptions, ITemplateEngine} from '@fluid-ses/templating';
+import {CustomTemplatingOptions, ITemplateEngine} from 'fluid-ses-templating';
 
 export interface IFluidSESConstructorOptions {
     defaultSourceMail?: string;

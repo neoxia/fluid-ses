@@ -1110,25 +1110,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluid-ses/core@workspace:core":
-  version: 0.0.0-use.local
-  resolution: "@fluid-ses/core@workspace:core"
-  dependencies:
-    "@aws-sdk/client-ses": ^3.14.0
-    "@fluid-ses/templating": "workspace:*"
-    "@types/nodemailer": ^6.4.1
-    "@types/sinon": ^10.0.2
-    nodemailer: ^6.6.0
-    sinon: ^10.0.1
-  languageName: unknown
-  linkType: soft
-
-"@fluid-ses/templating@workspace:*, @fluid-ses/templating@workspace:templating":
-  version: 0.0.0-use.local
-  resolution: "@fluid-ses/templating@workspace:templating"
-  languageName: unknown
-  linkType: soft
-
 "@istanbuljs/load-nyc-config@npm:^1.0.0":
   version: 1.1.0
   resolution: "@istanbuljs/load-nyc-config@npm:1.1.0"
@@ -3357,6 +3338,25 @@ __metadata:
   checksum: 1065cd78294ea651b8c1b96c298a3e70893a23da655e2288e40c06d5d9b1ebce4bd977e604678e01065a92580f3de5078d60d9ee4cdcede9a9989859d7eb5057
   languageName: node
   linkType: hard
+
+"fluid-ses-core@workspace:core":
+  version: 0.0.0-use.local
+  resolution: "fluid-ses-core@workspace:core"
+  dependencies:
+    "@aws-sdk/client-ses": ^3.14.0
+    "@types/nodemailer": ^6.4.1
+    "@types/sinon": ^10.0.2
+    fluid-ses-templating: 0.0.1
+    nodemailer: ^6.6.0
+    sinon: ^10.0.1
+  languageName: unknown
+  linkType: soft
+
+"fluid-ses-templating@0.0.1, fluid-ses-templating@workspace:templating":
+  version: 0.0.0-use.local
+  resolution: "fluid-ses-templating@workspace:templating"
+  languageName: unknown
+  linkType: soft
 
 "fluid-ses@workspace:.":
   version: 0.0.0-use.local

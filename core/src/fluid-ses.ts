@@ -1,7 +1,7 @@
 import {SES} from '@aws-sdk/client-ses';
 import {createTransport, SentMessageInfo, Transporter} from 'nodemailer';
 import {CustomAttachment, IFluidSESConstructorOptions, IFluidSESMailOptions} from './types';
-import {CustomTemplatingOptions, ITemplateEngine, TemplateEngine} from '@fluid-ses/templating';
+import {CustomTemplatingOptions, ITemplateEngine, TemplateEngine} from 'fluid-ses-templating';
 import {MailerError, MissingOptionsError, TemplateEngineError} from './core-errors';
 import Mail, {Address} from 'nodemailer/lib/mailer';
 

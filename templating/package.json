@@ -1,5 +1,5 @@
 {
-  "name": "@fluid-ses/templating",
+  "name": "fluid-ses-templating",
   "version": "0.0.1",
   "description": "Templating engine and utils used by Fluid SES",
   "repository": "https://github.com/neoxia/fluid-ses",

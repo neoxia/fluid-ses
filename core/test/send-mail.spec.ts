@@ -1,7 +1,7 @@
 import {FluidSes} from '../src';
 import {SinonStub, stub} from 'sinon';
 import Mail, {Attachment} from 'nodemailer/lib/mailer';
-import {CustomTemplatingOptions, TemplateEngine} from '@fluid-ses/templating';
+import {CustomTemplatingOptions, TemplateEngine} from 'fluid-ses-templating';
 
 describe('Fluid ses core tests', () => {
   const region = 'eu-west-1';
