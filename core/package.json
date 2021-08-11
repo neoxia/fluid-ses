@@ -2,7 +2,9 @@
   "name": "@fluid-ses/core",
   "version": "0.0.1",
   "description": "Fluid SES core",
-  "private": true,
+  "repository": "https://github.com/neoxia/fluid-ses",
+  "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
+  "license": "MIT",
   "main": "lib/src/index.js",
   "typings": "lib/src/index.d.ts",
   "directories": {
@@ -17,7 +19,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.14.0",
-    "@fluid-ses/templating": "workspace:*",
+    "@fluid-ses/templating": "0.0.1",
     "nodemailer": "^6.6.0"
   },
   "devDependencies": {

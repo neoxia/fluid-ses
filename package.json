@@ -1,12 +1,12 @@
 {
   "name": "fluid-ses",
+  "private": true,
   "version": "0.0.1",
   "description": "A syntax fluid mail sender library that uses SES",
   "main": "lib/src/index.js",
   "typings": "lib/src/index.d.ts",
   "repository": "git@github.com:neoxia/fluid-ses.git",
   "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "test:all": "yarn workspaces foreach --topological-dev run test",
