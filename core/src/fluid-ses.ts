@@ -1,4 +1,4 @@
-import {SES} from '@aws-sdk/client-ses';
+import * as aws from '@aws-sdk/client-ses';
 import {createTransport, SentMessageInfo, Transporter} from 'nodemailer';
 import {CustomAttachment, IFluidSESConstructorOptions, IFluidSESMailOptions} from './types';
 import {CustomTemplatingOptions, ITemplateEngine, TemplateEngine} from 'fluid-ses-templating';
@@ -24,12 +24,12 @@ export class FluidSes {
       this._mailTrap = constructOptions.mailTrap || FluidSes._noTrap;
       this._templateEngine = constructOptions.templateEngine || new TemplateEngine();
 
-      const mailer = new SES({
+      const ses = new aws.SES({
         apiVersion: '2010-12-01',
         region: constructOptions.region,
       });
 
-      this._transporter = createTransport({SES: mailer});
+      this._transporter = createTransport({SES: { ses, aws }});
     }
 
     /**
