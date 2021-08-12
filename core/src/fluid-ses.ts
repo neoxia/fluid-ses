@@ -164,7 +164,7 @@ export class FluidSes {
           ...this._options.additionalOptions,
           from:  this._options.additionalOptionsOverriding ? (this._options.additionalOptions?.from || completeSource) : completeSource,
           subject:  this._options.additionalOptionsOverriding ? (this._options.additionalOptions?.subject || this._options.subject) : this._options.subject,
-          text:  this._options.additionalOptionsOverriding ? (this._options.additionalOptions?.text || filledTemplate) : filledTemplate,
+          html:  this._options.additionalOptionsOverriding ? (this._options.additionalOptions?.html || filledTemplate) : filledTemplate,
           attachments:  this._options.additionalOptionsOverriding ? (this._options.additionalOptions?.attachments || this._options.attachments) : this._options.attachments,
         };
         if (this._options.useBbc && finalAddressees.length > 1) {
