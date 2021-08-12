@@ -19,11 +19,11 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.14.0",
+    "@types/nodemailer": "^6.4.1",
     "fluid-ses-templating": "0.0.1",
     "nodemailer": "^6.6.0"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.1",
     "@types/sinon": "^10.0.2",
     "sinon": "^10.0.1"
   }
