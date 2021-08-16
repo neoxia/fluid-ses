@@ -169,7 +169,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -186,7 +186,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -203,7 +203,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -223,7 +223,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees[0]);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual([addressees[1]]);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
   });
 
@@ -241,7 +241,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(attachments);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -259,7 +259,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual([singleAddressee]);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -278,7 +278,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual([singleAttachment]);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
   });
@@ -297,7 +297,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
@@ -316,7 +316,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual([additionalOptionsWithTo.to]);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
@@ -336,7 +336,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual(addressees);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
@@ -356,7 +356,7 @@ describe('Fluid ses core tests', () => {
     expect(mailerStub.firstCall.firstArg.from).toEqual(completeSource);
     expect(mailerStub.firstCall.firstArg.to).toEqual([additionalOptionsWithTo.to]);
     expect(mailerStub.firstCall.firstArg.subject).toEqual(subject);
-    expect(mailerStub.firstCall.firstArg.text).toEqual(templateContent);
+    expect(mailerStub.firstCall.firstArg.html).toEqual(templateContent);
     expect(mailerStub.firstCall.firstArg.encoding).toEqual(additionalOptions.encoding);
     expect(mailerStub.firstCall.firstArg.attachments).toEqual(undefined);
     expect(mailerStub.firstCall.firstArg.bcc).toEqual(undefined);
