@@ -4512,13 +4512,13 @@ __metadata:
     "@aws-sdk/client-ses": ^3.14.0
     "@types/nodemailer": ^6.4.1
     "@types/sinon": ^10.0.2
-    fluid-ses-templating: 0.0.1
+    fluid-ses-templating: 0.0.3
     nodemailer: ^6.6.0
     sinon: ^10.0.1
   languageName: unknown
   linkType: soft
 
-"fluid-ses-templating@0.0.1, fluid-ses-templating@workspace:templating":
+"fluid-ses-templating@0.0.3, fluid-ses-templating@workspace:templating":
   version: 0.0.0-use.local
   resolution: "fluid-ses-templating@workspace:templating"
   languageName: unknown
