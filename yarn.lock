@@ -4594,7 +4594,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"fluid-ses-templating@0.0.3, fluid-ses-templating@workspace:templating":
+"fluid-ses-templating@npm:0.0.3":
+  version: 0.0.3
+  resolution: "fluid-ses-templating@npm:0.0.3"
+  checksum: d65f1d0a9ac80c591701d222a59806fcdd20d79504cf0f61f3c122b8e5aac2e8611d195bcce2e4f0fa6ee4c5295add05db12f316c0304733d6fa843600d4d3b3
+  languageName: node
+  linkType: hard
+
+"fluid-ses-templating@workspace:templating":
   version: 0.0.0-use.local
   resolution: "fluid-ses-templating@workspace:templating"
   languageName: unknown

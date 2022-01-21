@@ -1,6 +1,6 @@
 {
   "name": "fluid-ses-templating",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Templating engine and utils used by Fluid SES",
   "repository": "https://github.com/neoxia/fluid-ses",
   "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
