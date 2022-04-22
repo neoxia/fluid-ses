@@ -13,35 +13,32 @@ jobs:
         with:
           path: .yarn/cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-      - uses: actions/cache@v3
-        with:
-          path: |
-            core/lib
-            template/lib
-          key: ${{ runner.os }}-built-files-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --immutable
-      - run: yarn run build:all
 
   lint:
     runs-on: ubuntu-latest
     needs: [setup]
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/cache@v3
         with:
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-            ${{ runner.os }}-built-files-
-      - uses: actions/checkout@v3
+          path: .yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - run: yarn install --immutable
+      - run: yarn run build:all
       - run: yarn run lint
 
   test:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/cache@v3
         with:
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-            ${{ runner.os }}-built-files-
-      - uses: actions/checkout@v3
+          path: .yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - run: yarn install --immutable
+      - run: yarn run build:all
       - run: yarn run test:all
