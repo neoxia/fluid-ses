@@ -12,11 +12,24 @@ Following environment variables must be defined:
 
 ## Installation
 
+With npm:
+```bash
+npm i fluid-ses-templating
+```
+With yarn:
+```bash
+yarn add fluid-ses-templating
+```
+
+## Local installation
+
+### Install & build
+
 ```bash
 yarn && yarn run build:all
 ```
 
-## Run tests
+### Run tests
 
 ```bash
 yarn run test:all
@@ -33,11 +46,11 @@ const fluidSes = new FluidSes({ region: 'eu-west-1' });
 ### Sending a mail
 ```typescript
 await fluidSes.sourceName('Fluid mailer')
-      .sourceMail('fluid-mailer@something.com')
-      .addressees(['someone@something.com','someoneElse@something.com'])
-      .subject('Urgent matter')
-      .template('My incredible message')
-      .sendMail();
+    .sourceMail('fluid-mailer@something.com')
+    .addressees(['someone@something.com','someoneElse@something.com'])
+    .subject('Urgent matter')
+    .template('My incredible message')
+    .sendMail();
 ```
 
 ## Constructor optional options
@@ -46,7 +59,7 @@ await fluidSes.sourceName('Fluid mailer')
 In order to avoid specifying sender identity each time, you can give default value for those
 
 ```typescript
-const fluidSes = new FluidSes({ 
+const fluidSes = new FluidSes({
     region: 'eu-west-1',
     defaultSourceName: 'System sender',
     defaultSourceMail: 'sytem-sender@your-company.com'
@@ -66,7 +79,7 @@ const myMailTrap = async (addressees: Array<string | Address>) => {
     return process.env.env === 'prod' ? addressees : [];
 }
 
-const fluidSes = new FluidSes({ 
+const fluidSes = new FluidSes({
     region: 'eu-west-1',
     mailTrap: myMailTrap
 });
@@ -78,7 +91,7 @@ If you want to use another template engine, you can define new ones this way
 ```typescript
 class MyCustomTemplateEngine extends ITemplateEngine {
     getComputedTemplate (options: CustomTemplatingOptions): Promise<string> {
-      // Process and then returns filled template as a promise
+        // Process and then returns filled template as a promise
     };
 }
 
@@ -106,11 +119,11 @@ const myTemplate: ITemplateEngineOptions = {
 };
 
 await fluidSes.sourceName('Fluid mailer')
-      .sourceMail('fluid-mailer@something.com')
-      .addressees(['someone@something.com','someoneElse@something.com'])
-      .subject('Urgent matter')
-      .template(myTemplate)
-      .sendMail();
+    .sourceMail('fluid-mailer@something.com')
+    .addressees(['someone@something.com','someoneElse@something.com'])
+    .subject('Urgent matter')
+    .template(myTemplate)
+    .sendMail();
 ```
 
 ## Other options
@@ -119,12 +132,12 @@ await fluidSes.sourceName('Fluid mailer')
 
 ```typescript
 await fluidSes.sourceName('Fluid mailer')
-      .sourceMail('fluid-mailer@something.com')
-      .addressees(['someone@something.com','someoneElse@something.com'])
-      .subject('Urgent matter')
-      .useBcc(true) // default is false
-      .template('My incredible message')
-      .sendMail();
+    .sourceMail('fluid-mailer@something.com')
+    .addressees(['someone@something.com','someoneElse@something.com'])
+    .subject('Urgent matter')
+    .useBcc(true) // default is false
+    .template('My incredible message')
+    .sendMail();
 ```
 This will use only the first addressee of the array as 'to' material and the others will be added as bcc.
 
