@@ -2,6 +2,9 @@
 
 A syntax fluid mail sender library that uses SES and NodeMailer.
 
+![build-status](https://img.shields.io/github/checks-status/neoxia/fluid-ses/master)
+![last-commit](https://img.shields.io/github/last-commit/neoxia/fluid-ses)
+
 ## Prerequisite
 Following environment variables must be defined:
 - AWS_ACCESS_KEY_ID
@@ -9,11 +12,24 @@ Following environment variables must be defined:
 
 ## Installation
 
+With npm:
+```bash
+npm i fluid-ses-core
+```
+With yarn:
+```bash
+yarn add fluid-ses-core
+```
+
+## Local installation
+
+### Install & build
+
 ```bash
 yarn && yarn run build:all
 ```
 
-## Run tests
+### Run tests
 
 ```bash
 yarn run test:all
