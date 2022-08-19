@@ -4,7 +4,6 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "maxConcurrency": 5,
   "testRegex": ".+\\.(test|spec)\\.tsx?$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
   "moduleNameMapper": {
@@ -16,5 +15,6 @@
   },
   "collectCoverage": true,
   "coverageDirectory": "./coverage",
-  "collectCoverageFrom": ["src/**/*.ts"]
+  "collectCoverageFrom": ["src/**/*.ts"],
+  "coverageReporters": ["json", "html", "lcov"]
 }
