@@ -2,8 +2,10 @@
 
 A syntax fluid mail sender library that uses SES and NodeMailer.
 
-![build-status](https://img.shields.io/github/checks-status/neoxia/fluid-ses/master)
+[![build-status](https://img.shields.io/github/checks-status/neoxia/fluid-ses/master)](https://github.com/neoxia/fluid-ses/actions)
 ![last-commit](https://img.shields.io/github/last-commit/neoxia/fluid-ses)
+[![npm](https://img.shields.io/npm/v/fluid-ses-core?label=fluid-ses-core)](https://www.npmjs.com/package/fluid-ses-core)
+[![npm](https://img.shields.io/npm/v/fluid-ses-templating?label=fluid-ses-templating)](https://www.npmjs.com/package/fluid-ses-templating)
 
 ## Prerequisite
 Following environment variables must be defined:
@@ -14,14 +16,14 @@ Following environment variables must be defined:
 
 With npm:
 ```bash
-npm i fluid-ses-templating
+npm i fluid-ses-core fluid-ses-templating
 ```
 With yarn:
 ```bash
-yarn add fluid-ses-templating
+yarn add fluid-ses-core fluid-ses-templating
 ```
 
-## Local installation
+## Project setup
 
 ### Install & build
 
@@ -52,6 +54,7 @@ await fluidSes.sourceName('Fluid mailer')
     .template('My incredible message')
     .sendMail();
 ```
+
 
 ## Constructor optional options
 
