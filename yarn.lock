@@ -3015,6 +3015,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sinon@npm:~10.0.13":
+  version: 10.0.13
+  resolution: "@types/sinon@npm:10.0.13"
+  dependencies:
+    "@types/sinonjs__fake-timers": "*"
+  checksum: 46a14c888db50f0098ec53d451877e0111d878ec4a653b9e9ed7f8e54de386d6beb0e528ddc3e95cd3361a8ab9ad54e4cca33cd88d45b9227b83e9fc8fb6688a
+  languageName: node
+  linkType: hard
+
+"@types/sinonjs__fake-timers@npm:*":
+  version: 8.1.2
+  resolution: "@types/sinonjs__fake-timers@npm:8.1.2"
+  checksum: bbc73a5ab6c0ec974929392f3d6e1e8db4ebad97ec506d785301e1c3d8a4f98a35b1aa95b97035daef02886fd8efd7788a2fa3ced2ec7105988bfd8dce61eedd
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.0
   resolution: "@types/stack-utils@npm:2.0.0"
@@ -4482,6 +4498,7 @@ __metadata:
   dependencies:
     "@aws-sdk/client-ses": ~3.150.0
     "@types/nodemailer": ~6.4.5
+    "@types/sinon": ~10.0.13
     fluid-ses-templating: 0.0.3
     nodemailer: ~6.7.8
     sinon: ~14.0.0
