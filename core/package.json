@@ -18,13 +18,12 @@
     "build": "npx tsc && babel --config-file ../babel.config.json lib -d lib"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "~3.47.1",
-    "@types/nodemailer": "~6.4.4",
-    "fluid-ses-templating": "0.0.3",
-    "nodemailer": "~6.7.2"
+    "@aws-sdk/client-ses": "~3.150.0",
+    "@types/nodemailer": "~6.4.5",
+    "fluid-ses-templating": "0.0.4",
+    "nodemailer": "~6.7.8"
   },
   "devDependencies": {
-    "@types/sinon": "~10.0.8",
-    "sinon": "~10.0.1"
+    "sinon": "~14.0.0"
   }
 }
