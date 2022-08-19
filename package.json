@@ -12,7 +12,7 @@
     "test:all": "yarn workspaces foreach --topological-dev run test",
     "test:templating": "yarn workspace fluid-ses-templating run test",
     "test:core": "yarn workspace fluid-ses-core run test",
-    "build:all": "yarn workspaces foreach run build",
+    "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:templating": "yarn workspace fluid-ses-templating run build",
     "build:core": "yarn workspace fluid-ses-core run build",
     "lint": "yarn run eslint '{core,templating}/{src,test}/*.ts'",
