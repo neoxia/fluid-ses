@@ -4482,13 +4482,20 @@ __metadata:
   dependencies:
     "@aws-sdk/client-ses": ~3.150.0
     "@types/nodemailer": ~6.4.5
-    fluid-ses-templating: 0.0.4
+    fluid-ses-templating: 0.0.3
     nodemailer: ~6.7.8
     sinon: ~14.0.0
   languageName: unknown
   linkType: soft
 
-"fluid-ses-templating@0.0.4, fluid-ses-templating@workspace:templating":
+"fluid-ses-templating@npm:0.0.3":
+  version: 0.0.3
+  resolution: "fluid-ses-templating@npm:0.0.3"
+  checksum: 60938b7a3c94c6093e87d122c54b8af3bee814a4602b5e758f5ffa4a12c4999eaae36e6d3a4d3309ff0589415dd5799c5e2ecc1dc19e900f566faf71cc8b9068
+  languageName: node
+  linkType: hard
+
+"fluid-ses-templating@workspace:templating":
   version: 0.0.0-use.local
   resolution: "fluid-ses-templating@workspace:templating"
   languageName: unknown
