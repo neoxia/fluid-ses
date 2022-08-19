@@ -2,6 +2,9 @@
 
 A syntax fluid mail sender library that uses SES and NodeMailer.
 
+![build-status](https://img.shields.io/github/checks-status/neoxia/fluid-ses/master)
+![last-commit](https://img.shields.io/github/last-commit/neoxia/fluid-ses)
+
 ## Prerequisite
 Following environment variables must be defined:
 - AWS_ACCESS_KEY_ID
@@ -36,7 +39,6 @@ await fluidSes.sourceName('Fluid mailer')
       .template('My incredible message')
       .sendMail();
 ```
-
 
 ## Constructor optional options
 
