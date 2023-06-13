@@ -1,6 +1,6 @@
 {
   "name": "fluid-ses-core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Fluid SES core",
   "repository": "https://github.com/neoxia/fluid-ses",
   "author": "Thibault Ruby <thibault.ruby@neoxia.com>",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@aws-sdk/client-ses": "~3.350.0",
     "@types/nodemailer": "~6.4.8",
-    "fluid-ses-templating": "0.0.6",
+    "fluid-ses-templating": "0.0.7",
     "nodemailer": "~6.9.3"
   },
   "devDependencies": {
