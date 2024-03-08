@@ -16,24 +16,26 @@
     "build:templating": "yarn workspace fluid-ses-templating run build",
     "build:core": "yarn workspace fluid-ses-core run build",
     "lint": "yarn run eslint '{core,templating}/{src,test}/*.ts'",
-    "lint-fix": "yarn run eslint --fix '{core,templating}/{src,test}/*.ts'"
+    "lint-fix": "yarn run eslint --fix '{core,templating}/{src,test}/*.ts'",
+    "audit": "yarn npm audit --all --recursive",
+    "audit:production": "yarn npm audit --all --recursive --environment production"
   },
   "workspaces": [
     "core",
     "templating"
   ],
   "devDependencies": {
-    "@babel/cli": "~7.22.5",
-    "@babel/core": "~7.22.5",
-    "@babel/preset-env": "~7.22.5",
-    "@types/jest": "~29.5.2",
-    "@types/node": "~20.3.0",
-    "@typescript-eslint/eslint-plugin": "~5.59.9",
-    "@typescript-eslint/parser": "~5.59.9",
-    "eslint": "~8.42.0",
-    "jest": "~29.5.0",
-    "ts-jest": "~29.1.0",
-    "typescript": "~5.0.4"
+    "@babel/cli": "~7.23.9",
+    "@babel/core": "~7.24.0",
+    "@babel/preset-env": "~7.24.0",
+    "@types/jest": "~29.5.12",
+    "@types/node": "~20.11.25",
+    "@typescript-eslint/eslint-plugin": "~7.1.1",
+    "@typescript-eslint/parser": "~7.1.1",
+    "eslint": "~8.57.0",
+    "jest": "~29.7.0",
+    "ts-jest": "~29.1.2",
+    "typescript": "~5.4.2"
   },
   "packageManager": "yarn@3.6.0"
 }
