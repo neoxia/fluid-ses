@@ -21,7 +21,7 @@
     "@aws-sdk/client-ses": "~3.350.0",
     "@types/nodemailer": "~6.4.8",
     "fluid-ses-templating": "0.0.7",
-    "nodemailer": "~6.9.3"
+    "nodemailer": "~6.9.9"
   },
   "devDependencies": {
     "@types/sinon": "~10.0.15",

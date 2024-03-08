@@ -4222,7 +4222,7 @@ __metadata:
     "@types/nodemailer": ~6.4.8
     "@types/sinon": ~10.0.15
     fluid-ses-templating: 0.0.7
-    nodemailer: ~6.9.3
+    nodemailer: ~6.9.9
     sinon: ~15.1.2
   languageName: unknown
   linkType: soft
@@ -5658,10 +5658,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:~6.9.3":
-  version: 6.9.3
-  resolution: "nodemailer@npm:6.9.3"
-  checksum: 3bea8316652c0578515d9146d2f24660e4855807520153f061d39af76b440a4f61b4e70f10fed35f8f12f115f6aea1aeb483ea7ba0337c0e3e675f117c41c611
+"nodemailer@npm:~6.9.9":
+  version: 6.9.11
+  resolution: "nodemailer@npm:6.9.11"
+  checksum: 496741f440fb7e4077ce9604c8ccab05b91db23fbedc15deebcae0642e1ead6539a9c7e2ae9f6352821ebfdad7ab091fbb16b4f00bb226ef5418da6a74b180be
   languageName: node
   linkType: hard
 
